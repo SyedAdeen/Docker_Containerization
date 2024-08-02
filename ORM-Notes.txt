@@ -1,0 +1,48 @@
+- ORM
+  ORM (Object-Relational Mapping) in Node.js is a technique that allows you to interact with a
+  database using object-oriented programming principles, rather than writing raw SQL queries.
+  It maps database tables to JavaScript objects, so you can perform database operations using 
+  JavaScript code. This abstraction simplifies data manipulation and enhances code readability.
+
+-Why Use ORM?
+  Abstraction: Simplifies database operations by using objects instead of raw SQL.
+  Productivity: Speeds up development by automating common tasks like CRUD operations.
+  Maintainability: Makes code more readable and easier to manage.
+  Security: Helps prevent SQL injection attacks by using parameterized queries
+---------------------------------------------------------------------------------------------------
+
+------- SETUP ORM  --------
+npm install sequelize mysql2
+npm install --save-dev sequelize-cli
+
+Initialize Sequelize: Run the following command to create a Sequelize project 
+                      structure with configuration files. npx sequelize-cli init
+
+Configure the database connection
+
+Initialize First:
+npx sequelize-cli init
+
+Generate Models (to make the User table in the Database)
+npx sequelize-cli model:generate --name User --attributes name:string,age:integer
+
+Run Migrations:
+npx sequelize-cli db:migrate
+
+Create the demo seed:
+npx sequelize-cli seed:generate --name demo-user
+
+
+Migrate the Seed initial data of table:
+npx sequelize-cli db:seed:all
+
+To sun specific seed file
+npx sequelize-cli db:seed --seed [timestamp]-seed-city.js 
+
+
+
+
+--work to do 
+Docker
+
+
